@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+<!-- {% block body %} -->
+<style>
+   html, body {
+    background: linear-gradient(rgba(0,0,0,0.1),rgba(104, 32, 32, 0.3)),url("../static/images/frt.jpg");
+    animation: animateBg  10s ease-in-out infinite;
+}
+@keyframes animateBg{
+    0% { background-size: 130%; }
+    50% { background-size: 140%; }
+    100% { background-size: 130%; }
+}
+h1 {
+      color: white;
+      text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+      font-family: "Lucida Console", "Courier New", monospace;
+      font-style: oblique;
+      font-variant: small-caps;
+      font-family: "Sofia", sans-serif;
+}
+.fert_btn {
+    width: 25%;
+    padding: 9px 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 13px;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    background: #0afada;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50px;
+    outline: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+.fert_btn:hover {
+    background: rgb(255, 62, 101);
+    color: white;
+}
+</style>
+
+<div class="container py-2 mx-auto my-50 text-center" style="margin: 10.8rem;">
+  <div class="row">
+    <div class="col-sm py-2 py-md-3">
+      <div class="card card-body" style="justify-content: center; background-color:blanchedalmond">
+        <h1 class="text-center"><b>Sorry we couldn't process your request
+            currently. <br> Please try again</b></h1>
+
+
+        <a href="{{ url_for('home') }}">
+          <button type="submit" class="fert_btn" style="
+        color: black;
+        font-weight: bold;
+        margin: 1rem;">
+            Try again
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+	const body = document.querySelector("body");
+	const navbar = document.querySelector(".navbar");
+	const menuBtn = document.querySelector(".menu-btn");
+	const cancelBtn = document.querySelector(".cancel-btn");
+	menuBtn.onclick = () => {
+		navbar.classList.add("show");
+		menuBtn.classList.add("hide");
+		body.classList.add("disabled");
+	}
+	cancelBtn.onclick = () => {
+		body.classList.remove("disabled");
+		navbar.classList.remove("show");
+		menuBtn.classList.remove("hide");
+	}
+	window.onscroll = () => {
+		this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+	}
+</script>
+{% endblock %}

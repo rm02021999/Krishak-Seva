@@ -1,0 +1,104 @@
+@media (max-width:991px){
+
+    /*  ================================================
+                        HEADER CSS
+    ================================================ */
+
+}
+    @media (max-width:767px){
+     
+        .card h2{
+            font-size: 1.75rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        .card p{
+            font-size: 1rem;
+        }
+    }
+	
+@media (max-width: 579px) {
+  header .krishi_cus {
+    text-align: center;
+    font-size: 2.5em;
+   margin-left: 40px;
+    line-height: 1;
+    text-decoration: underline;
+    color: #fff;
+    font-family: Pacifico;
+    animation: neon5 1.5s ease-in-out infinite alternate;
+	 text-shadow: 0 0 10px rgb(36, 32, 32), 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff9900,
+        0 0 70px #ff9900, 0 0 80px #ff9900, 0 0 100px #ff9900, 0 0 150px #ff9900;
+}
+
+.movie {
+	width: 260px;
+	height: 321px;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: translateZ(-130px);
+	-moz-transform: translateZ(-130px);
+	transform: translateZ(-130px);
+	-webkit-transition: -webkit-transform 350ms;
+	-moz-transition: -moz-transform 350ms;
+	transition: transform 350ms;
+  animation: movie 2s ease-in-out infinite alternate;
+}
+
+.movie .poster  {
+	-webkit-transform: translateZ(130px);
+	-moz-transform: translateZ(130px);
+	transform: translateZ(130px);
+	background-size: cover;
+	background-repeat: no-repeat;
+  border: 4px solid rgb(46, 41, 44);
+  border-radius: 50% 5% 50% 50% ;
+}
+
+  @keyframes movie {
+    from {
+      -webkit-transform: rotateY(-78deg) translateZ(20px);
+      -moz-transform: rotateY(-78deg) translateZ(20px);
+      transform: rotateY(-78deg) translateZ(20px);
+    }
+  }
+
+  .carousel-inner{
+    background-position: 50% center;
+    height: 450px;
+  }
+  .cus_slider {
+    height: 28rem;
+    overflow: hidden;
+}
+
+}
+@media (min-width: 580px) {
+  header .navbar .logo a{
+    font-size: 27px;
+  }
+  header .krishi_cus {
+    text-align: center;
+    font-size: 3.2em;
+   margin-left: 65px;
+    line-height: 1;
+    text-decoration: underline;
+    color: #fff;
+    font-family: Pacifico;
+    animation: neon5 1.5s ease-in-out infinite alternate;
+}
+@keyframes neon5 {
+    from {
+      text-shadow: 0 0 10px rgb(36, 32, 32), 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff9900,
+        0 0 70px #ff9900, 0 0 80px #ff9900, 0 0 100px #ff9900, 0 0 150px #ff9900;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff9900,
+        0 0 35px #ff9900, 0 0 40px #ff9900, 0 0 50px #ff9900, 0 0 75px #ff9900;
+    }
+  }
+
+}
+
+	

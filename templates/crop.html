@@ -1,0 +1,280 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<style>
+:root {
+    --primary: #8c38ff;
+    --light: #eeeeee;
+    --dark: #212121;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-family: consolas;
+}
+b, strong {
+    font-weight: bolder;
+    color: whitesmoke;
+    font-size: 1.3rem;
+}
+html, body {
+    background: linear-gradient(rgba(0,0,0,0.1),rgba(104, 32, 32, 0.3)),url("../static/images/frt.jpg");
+    animation: animateBg  10s ease-in-out infinite;
+}
+
+@keyframes animateBg{
+    0% { background-size: 130%; }
+    50% { background-size: 140%; }
+    100% { background-size: 130%; }
+}
+li, a, button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+}
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 2%;
+    background-color: transparent;
+    height: 70px;
+    width: 100%;
+    top: 0;
+    position: sticky;
+}
+header .logo {
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+}
+body>.content {
+    min-height: calc(100vh - 50px);
+    margin-top: 20px;
+}
+body>.content .main-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.container {
+    width: 100%;
+    padding: 0px 30px 10px;
+    box-shadow: 0px 0px 20px 20px rgb(193 255 194 / 37%)
+}
+.container .title {
+    color: #505050;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e4e8ee;
+}
+.container .title .title-heading {
+    margin: 0;
+    color: #fff;
+    font-weight: 800;
+    font-size: 27px;
+}
+.form-group {
+  margin: 5px 0px;
+}
+.input-form {
+    width: 100%;
+}
+.input-form .input-field {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+.input-form .input-field label {
+    width: 250px;
+    color: #000000;
+    margin-right: 10px;
+    font-size: 19px;
+    font-weight: 900;
+}
+.input-form .input-field input, select {
+    width: 100%;
+    outline: none;
+    color: #706c6c;
+    border: 1px solid #d5dbd9;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px 10px;
+    border-radius: 3px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+ #crop_cus .fert_btn {
+    width: 55%;
+    padding: 9px 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 13px;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    background: #0afada;
+    color: black;
+    cursor: pointer;
+    border-radius: 50px;
+    outline: none;
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+ #crop_cus .fert_btn:last-child {
+    margin-bottom: 0;
+}
+
+ #crop_cus .fert_btn:hover {
+    background: rgb(255, 62, 101);
+    color: white;
+}
+
+@media (max-width: 974px){
+    .input-form .input-field {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .input-form .input-field label {
+        margin-bottom: 5px;
+    }
+    header .cta {
+        display: none;
+    }
+}
+</style>
+    <!-- main section -->
+    <div class="content" id="crop_cus">
+        <main class="main-container">
+            <div class="container" style="background: rgba(0,0,0,.5);">
+                <div class="title">
+                    <h1 class="title-heading">Get informed advice on fertilizer based on soil</h1>
+                </div>
+
+                <form method="POST" class="form-main" action="{{ url_for('crop_prediction') }}">
+                    <div class="form-group input-field">
+                      <label for="Nitrogen" style="font-size: 17px"><b>Nitrogen</b></label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="Nitrogen"
+                        name="nitrogen"
+                        placeholder="Enter the value (example:50)"
+                        style="font-weight: bold"
+                        required
+                      />
+                    </div>
+                    <div class="form-group input-field">
+                      <label for="Phosphorous" style="font-size: 17px"
+                        ><b>Phosphorous</b></label
+                      >
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="Phosphorous"
+                        name="phosphorous"
+                        placeholder="Enter the value (example:50)"
+                        style="font-weight: bold"
+                        required
+                      />
+                    </div>
+                
+                    <div class="form-group input-field">
+                      <label for="Pottasium" style="font-size: 17px"><b>Pottasium</b></label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="Pottasium"
+                        name="pottasium"
+                        placeholder="Enter the value (example:50)"
+                        style="font-weight: bold"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group input-field">
+                      <label for="ph" style="font-size: 17px"><b>ph level</b></label>
+                      <input
+                        type="number"
+                        step="0.01"
+                        class="form-control"
+                        id="ph"
+                        name="ph"
+                        style="font-weight: bold"
+                        placeholder="Enter the value"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="Rainfall"><b>Rainfall (in mm)</b></label>
+                      <input
+                        type="number"
+                        step="0.01"
+                        class="form-control"
+                        id="Rainfall"
+                        name="rainfall"
+                        style="font-weight: bold"
+                        placeholder="Enter the value"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="State" style="font-size: 17px"><b>State</b></label>
+                      <select
+                        onchange="print_city('state', this.selectedIndex);"
+                        id="sts"
+                        name="stt"
+                        class="form-control"
+                        style="font-weight: bold; color: black"
+                        required
+                      ></select>
+                      <br />
+                      <label for="City" style="font-size: 17px"><b>City</b></label>
+                      <select
+                        id="state"
+                        class="form-control"
+                        name="city"
+                        style="font-weight: bold; color: black"
+                        required
+                      ></select>
+                      <script language="javascript">
+                        print_state("sts");
+                      </script>
+                    </div>                      
+                    <div class="input-field">
+                      <button type="submit" class="fert_btn" > Predict</button>
+                    </div>
+
+                  </form>
+            </div>
+        </main>
+    </div>
+	
+    <script>
+      const body = document.querySelector("body");
+      const navbar = document.querySelector(".navbar");
+      const menuBtn = document.querySelector(".menu-btn");
+      const cancelBtn = document.querySelector(".cancel-btn");
+      menuBtn.onclick = () => {
+        navbar.classList.add("show");
+        menuBtn.classList.add("hide");
+        body.classList.add("disabled");
+      }
+      cancelBtn.onclick = () => {
+        body.classList.remove("disabled");
+        navbar.classList.remove("show");
+        menuBtn.classList.remove("hide");
+      }
+      window.onscroll = () => {
+        this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+      }
+    </script>
+
+{% endblock %}

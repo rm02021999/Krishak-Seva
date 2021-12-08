@@ -1,0 +1,365 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-font:"Poppins", sans-serif;
+
+    /* Background Color */
+    --bg-white:#fff;
+    --bg-black:#2C2C2C;
+    --bg-light-pink:#ff007a;
+    --bg-light-gray:#f6f9fe;
+    --bg-gradient:linear-gradient(to top, #ff007a 0%, rgba(142, 0, 116, 1) 100%);
+    --bg-card-shodow:0 0.188rem 1.25rem 0px rgba(0, 0, 0,0.06);
+    --bg-card-shodow:0 2rem 5rem rgb(0,0,0,0.06); 
+    --bg-light-gray-1:#eee; 
+
+
+    /* Text Color */
+    --primary-font:"Poppins", sans-serif;;
+    --text-white:#fff;
+    --text-black:#2C2C2C;
+    --text-light-black:#444;
+    --text-light-pink:#ff007a;
+    --text-light-gray:#7e8085;
+}
+
+.img_cus{
+    height: 50px;
+    width: 120px;
+}
+
+/* custom scroll bar */
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 14px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(255, 4, 88);
+    border: 2px solid white;
+    border-radius: 25px 25px;
+}
+::selection{
+  background: rgb(0,123,255,0.3);
+}
+header .content{
+  max-width: 1250px;
+  margin: auto;
+  padding: 0 30px;
+}
+header .navbar{
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  padding: 25px 0;
+  transition: all 0.3s ease;
+  display: block;
+}
+header .navbar .content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .navbar .menu-list{
+  display: inline-flex;
+}
+header .menu-list li{
+  list-style: none;
+}
+header .menu-list li a{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+header .menu-list li a:hover{
+  color: rgb(6, 255, 222);
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 2px;
+  transition: all 0.3s ease;
+  border: 4px solid whitesmoke;
+  border-radius: 20px;
+  padding: 5px 8px;
+}
+.icon{
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+header .menu-list .cancel-btn{
+  position: absolute;
+  right: 30px;
+  top: 20px;
+}
+@media (max-width: 1230px) {
+  header .content{
+    padding: 0 60px;
+  }
+}
+@media (max-width: 1100px) {
+  .content{
+    padding: 0 40px;
+  }
+}
+@media (max-width: 900px) {
+  header .content{
+    padding: 0 30px;
+  }
+}
+@media (max-width: 868px) {
+  body.disabled{
+    overflow: hidden;
+  }
+  header .icon{
+    display: block;
+  }
+  header .icon.hide{
+    display: none;
+  }
+  header .navbar .menu-list{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    max-width: 400px;
+    left: -100%;
+    top: 0px;
+    display: block;
+    padding: 40px 0;
+    text-align: center;
+    background: #222;
+    transition: all 0.3s ease;
+  }
+  header .navbar.show .menu-list{
+    left: 0%;
+  }
+  header .navbar .menu-list li{
+    margin-top: 45px;
+  }
+  header .navbar .menu-list li a{
+    font-size: 23px;
+    margin-left: -100%;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  header .navbar.show .menu-list li a{
+    margin-left: 0px;
+  }
+}
+
+/* ============================================================================ */
+ 
+/* Slider */
+.carousel{
+    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(54, 21, 21, 0.3));
+}
+.carousel-inner{
+    z-index: -5;
+}
+.cus_slider{
+    height: 38rem;
+    overflow: hidden;
+}
+.cus_slider img{
+    background-position: center;
+    height: 48rem;  
+}
+.navbar-toggler{
+    color: black;
+}
+
+/* Spritual */
+
+.spiritual{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(54, 21, 21, 0.5)),url("../images/gouranga.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.spiritual h2{
+    font-size: 2.938rem;
+    font-weight: 700;
+    line-height:4.938rem;
+    color:whitesmoke;
+    padding:1.063rem  0;
+    font-style: italic;
+    text-shadow: 10px 10px 20px rgb(255,47,144),10px 10px 6px rgb(255,25,98),-8px -5px 8px rgb(25, 236, 255);
+}
+.spiritual p{
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height:2.938rem;
+    text-align: center;
+    color: #FFFFFF;
+text-shadow: 0 0 5px rgb(17, 16, 16), 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px , 0 0 40px #b8b8b8;
+}
+.gita-image{
+    text-align: right;
+    /* transform: rotate(-345deg); */
+}
+.gita-image img{
+    animation: gita 2s linear infinite;
+}
+@keyframes gita{
+    0%, 100%{
+        transform: translateY(0rem);
+    }
+    50%{
+        transform: translateY(-3.9rem);
+    }
+}
+        /* Contact Section */
+
+        #contact{
+            background:#f6f9fe;
+        }
+        .contacts .info li i{
+            color:#2C2C2C;
+            font-size: 1.5rem;
+        }
+        .contacts .info li p a{ 
+            font-size: 1rem;
+            display: inline-block;
+            margin:0.75rem 0;
+        }
+        .contacts .form-group{
+            margin-bottom:1.5rem;
+        }
+        .contacts .form-control{
+            height:3.75rem;
+            padding:0.375rem 1.1875rem;
+            border:none;
+            font-size:1rem;
+            box-shadow: 0 0.1875rem 1.25rem 0 rgb(0 0 0 / 12%);
+        }
+        .contacts .textarea{
+            width:100%;
+            border-radius: 0.25rem;
+            padding:0.75rem 1.1875rem;
+            border:none;
+            font-size: 1rem;
+            margin-top:0.3125rem;
+            box-shadow: 0 0.1875rem 1.25rem 0 rgb(0 0 0 / 12%);
+        } 
+        .contacts .textarea:focus{
+            outline:none;
+            border:none;
+        }
+        .btn{
+            font-size: 0.938rem;
+            font-weight: 500;
+            color: #fff;
+            line-height: 1;
+            text-align: center;
+            padding: 1.125rem 1.875rem;
+            border: 0 none;
+            border-radius: 0.375rem;
+            outline: 0 none;
+            position: relative;
+            z-index: 1;
+        }
+.btn, 
+.btn:active, 
+.btn.sApp-btn:before, 
+.bg-overlay::after{
+    background:linear-gradient(to top, #ff007a 0%, rgba(142, 0, 116, 1) 100%);
+} 
+.btn:hover{
+    color:#fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+.ptb_100 {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    margin-bottom: 5px;
+} 
+
+.contacts h2 {
+    color: #2C2C2C;
+    font-size: 2.875rem;
+    line-height: 3.75rem;
+    font-weight: 400;
+  }
+.contacts h5 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0.063rem;
+    line-height: 1.688rem;
+    color: #ff007a;
+    text-transform: uppercase;
+  }
+
+  .contacts a {
+    color: #444;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+} 
+.contacts a:hover,
+.contacts a:focus {
+    color: #ff007a;
+}
+    /* Memeber Section */
+    #member{
+        background: #FFEDCC; 
+    }
+    #member h1{
+        padding-bottom: 30px;
+    }
+    #member .skd{
+        border: 2px solid var(--bg-light-pink);
+    }
+.card_wrapper img{
+    height: 8rem;
+    width: 8rem;
+    object-fit: cover;
+    margin: auto;
+    border: 4px solid cyan;
+}
+.card_wrapper .card_img{
+    margin-top: -50px;
+    margin-left: 25%;
+}
+.img-fluids{
+    border: 4px solid rgb(12, 250, 250);
+}
+.neon {
+        text-align: center;
+        font-size: 3em;
+        margin-bottom: 0;
+        margin-top: 0;
+        color: var(--text-white);
+        font-family: Iceland;
+  }
+  .neon1{
+      display: block;
+    text-align: center;
+    font-size: 1.763em;
+    margin-bottom: 0;
+    margin-top: 0;
+    color: var(--bg-white);
+    font-family: consolas;
+  }
+@media (max-width:767px){
+    .mob-w-100{
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
