@@ -82,7 +82,9 @@ def weather_fetch(city_name):
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
 
     complete_url = base_url + "appid=" + api_key + "&q=" + city_name
+    print(complete_url)
     response = requests.get(complete_url)
+    print(response)
     x = response.json()
 
     if x["cod"] != "404":
@@ -149,10 +151,14 @@ def crop_prediction():
         if weather_fetch(city) != None:
             temperature, humidity = weather_fetch(city)
             data = np.array([[N, P, K, temperature, humidity, ph, rainfall]])
-            my_prediction = crop_recommendation_model.predict(data)
-            final_prediction = my_prediction[0]
 
-            return render_template('crop-result.html', prediction=final_prediction, title=title)
+            my_prediction = crop_recommendation_model.predict(data)
+            probs = crop_recommendation_model.predict_proba(data)
+            best_n = np.argsort(probs, axis=1)[:,:-5-1:-1]
+            
+            final_prediction = list(crop_recommendation_model.classes_[best_n][0])
+            print(final_prediction)
+            return render_template('crop-result.html', prediction=", ".join(list(final_prediction)), title=title)
 
         else:
 
@@ -209,4 +215,4 @@ def fert_recommend():
 
 # ===============================================================================================
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
