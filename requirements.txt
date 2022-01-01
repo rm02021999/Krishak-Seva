@@ -1,3 +1,5 @@
+torch==1.8.1+cpu
+torchvision==0.9.1+cpu
 argon2-cffi==20.1.0
 astroid==2.4.2
 async-generator==1.10
@@ -81,9 +83,7 @@ terminado==0.9.1
 testpath==0.4.4
 threadpoolctl==2.1.0
 toml==0.10.2
-torch==1.8.1+cpu
 torchaudio==0.10.1
-torchvision==0.9.1+cpu
 tornado==6.1
 traitlets==5.0.5
 txt2tags==3.7
